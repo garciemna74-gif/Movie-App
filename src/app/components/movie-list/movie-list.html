@@ -1,0 +1,15 @@
+<div class="container">
+  @for (movie of movieService.movieList; track movie.id) {
+    <div class="movie-card">
+      <div>
+        <img
+          [src]="'https://image.tmdb.org/t/p/original' + movie.poster_path"
+          alt="Movie Poster"
+        />
+      </div>
+      <div class="movie-detail">
+        <h3>{{ movie.title }}</h3>
+      </div>
+    </div>
+  }
+</div>

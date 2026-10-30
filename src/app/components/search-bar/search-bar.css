@@ -1,0 +1,56 @@
+
+.container {
+    display: flex;
+    align-items: center;
+    padding: 14px 25px;
+    background-color: #26352a;
+    color: #ffffff;
+}
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input {
+    width: 240px;
+    padding: 11px 14px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #26352a;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: #cbe277;
+    box-shadow: 0 0 0 3px rgba(203, 226, 119, 0.2);
+}
+
+.search-bar-container fa-icon {
+    color: #d9f18b;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.search-bar-container fa-icon:hover {
+    transform: scale(1.2);
+}
+
+.search-bar-container label {
+    color: #d9f18b;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: system-ui, sans-serif;
+}
