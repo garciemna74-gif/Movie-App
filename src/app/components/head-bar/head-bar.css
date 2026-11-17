@@ -1,51 +1,58 @@
-.container {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 32px;
-    background: linear-gradient(90deg, var(--yellow) 0%, #ffdd57 100%);
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+:host {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(12, 9, 20, 0.72);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
 }
 
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px clamp(18px, 5vw, 56px);
+  border-bottom: 1px solid var(--line);
+}
+
+/* Logo : dégradé or → orange → corail */
 h1 {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: var(--font-title);
-    font-size: 2.2rem;
-    font-weight: 400;
-    letter-spacing: 4px;
-    color: #14101c;
+  margin: 0;
+  font-family: var(--font-title);
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: var(--gold);
+  background: linear-gradient(90deg, var(--gold), var(--orange) 55%, var(--red));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 999px;
-    background-color: var(--purple);
-    color: white;
-    font-family: var(--font-body);
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 26px;
+  border: none;
+  border-radius: 999px;
+  background: var(--gradient);
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(255, 77, 106, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 button:hover {
-    background-color: var(--purple-light);
-    transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(255, 77, 106, 0.5);
 }
 
-button fa-icon {
-    color: #ff6b81;
+button:active {
+  transform: translateY(0);
 }
-

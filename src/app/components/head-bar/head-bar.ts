@@ -1,14 +1,19 @@
-import { Component } from '@angular/core';
-import { FaIconComponent } from '@fortawesome/angular-fontawesome';
-import { faFilm, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  imports: [FaIconComponent],
+  imports: [FontAwesomeModule],
   selector: 'app-head-bar',
   styleUrl: './head-bar.css',
   templateUrl: './head-bar.html',
 })
 export class HeadBar {
-  faFilm = faFilm;
   faHeart = faHeart;
+  router = inject(Router);
+
+  navigateToWishList() {
+    this.router.navigate(['wishlist']);
+  }
 }

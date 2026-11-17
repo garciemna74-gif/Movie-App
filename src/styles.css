@@ -1,18 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
-/* Styles globaux : palette et base de l'application */
+/* Styles globaux : polices, palette et base de l'application */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
 :root {
-  --yellow: rgb(248, 199, 9);
-  --yellow-dark: #d9ad00;
-  --purple: rgb(108, 76, 129);
-  --purple-light: #8a63a8;
-  --bg: #0d0d12;
-  --surface: #17171f;
-  --surface-2: #22222d;
-  --text: #f2f2f5;
-  --text-muted: #9a9aa8;
-  --radius: 12px;
+  --bg: #0c0914;
+  --surface: #171127;
+  --surface-2: #221a36;
+  --line: rgba(255, 255, 255, 0.1);
+  --red: #ff4d6a;
+  --orange: #ff9a3d;
+  --gold: #ffc857;
+  --ink: #1a0a12;
+  --text: #fff6ea;
+  --text-soft: #e6dcf0;
+  --muted: #b3a6c9;
+  --gradient: linear-gradient(135deg, var(--red), var(--orange));
   --font-title: 'Bebas Neue', 'Franklin Gothic Medium', Impact, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: dark;
 }
 
 *,
@@ -21,11 +25,58 @@
   box-sizing: border-box;
 }
 
+/* Texte de base plus grand : 17px au lieu de 16px, et toutes les tailles en rem suivent */
+html {
+  font-size: 106.25%;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at top, #1b1530 0%, var(--bg) 55%) fixed;
+  /* deux lueurs de projecteur (corail à gauche, violet à droite) sur fond prune */
+  background:
+    radial-gradient(900px 520px at 8% -8%, rgba(255, 77, 106, 0.22), transparent 60%),
+    radial-gradient(800px 480px at 100% 0%, rgba(124, 92, 255, 0.2), transparent 60%),
+    var(--bg);
+  background-attachment: fixed;
   color: var(--text);
   font-family: var(--font-body);
-  line-height: 1.5;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+/* Contour visible quand on navigue au clavier (Tab) */
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* Respecte le réglage « réduire les animations » du système */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--red);
+  color: var(--text);
 }

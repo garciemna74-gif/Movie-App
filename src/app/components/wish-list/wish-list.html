@@ -1,1 +1,12 @@
-<p>wish-list works!</p>
+<div class="container">
+    @for (movie of wishList(); track movie.id) {
+        <div class="movie-card" (click)="navigateTo(movie)">
+            <div class="movie-poster">
+                <img [src]="`https://image.tmdb.org/t/p/original/${movie.poster_path}`" alt="">
+            </div>
+            <div class="movie-detail">
+                <h2>{{ movie.title }}</h2>
+            </div>
+        </div>
+    }
+</div>
